@@ -1,7 +1,5 @@
 name: Simple Local
-
 on: push
-
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -10,12 +8,6 @@ jobs:
       - run: node --version
       - run: npm --version
       - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm install
-        working-directory: .github  # Define o diretório de trabalho para a pasta .github
-      - name: Install moment
-        run: npm install moment
-        working-directory: .github  # Define o diretório de trabalho para a pasta .github
-      - name: Run app.js
-        run: node app.js
-        working-directory: .github  # Define o diretório de trabalho para a pasta .github
+      - run: npm install
+      - run: npm install --save moment
+      - run: node app.js
